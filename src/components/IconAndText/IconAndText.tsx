@@ -13,6 +13,7 @@ interface IconAndTextProps {
     | "yellow"
     | "base-text"
     | "yellow-light"
+    | "purple-light"
     | "none";
   "bg-color-icon":
     | "purple"

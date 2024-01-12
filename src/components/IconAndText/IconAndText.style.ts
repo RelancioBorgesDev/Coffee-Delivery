@@ -9,18 +9,20 @@ interface ContainerProps {
     | "yellow"
     | "base-text"
     | "yellow-light"
+    | "purple-light"
     | "none";
 }
 
-export const Container = styled.div<ContainerProps>`
+export const Container = styled.span<ContainerProps>`
   width: fit-content;
+  height: 2.375rem;
   padding: 0.5rem;
   border: 0;
   border-radius: 0.5rem;
 
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.2rem;
   background-color: ${({ theme, "bg-color": bgColor }) =>
     theme.colors[bgColor]};
 

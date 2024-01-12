@@ -14,6 +14,8 @@ interface IconProps {
 }
 
 export const IconContainer = styled.button<IconProps>`
+  width: 2.375rem;
+  height: 2.375rem;
   background-color: ${({ theme, "bg-color": bgColor }) =>
     theme.colors[bgColor]};
   color: ${({ theme, "icon-color": iconColor }) => theme.colors[iconColor]};
