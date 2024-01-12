@@ -16,21 +16,22 @@ export const defaultTheme = {
     "base-card": "#f3f2f2",
     background: "#fafafa",
     white: "#FFFFFF",
+    none: "",
   },
   fontFamily: {
-    "baloo-2": "'Baloo 2', sans-serif",
+    "baloo-2": "'baloo-2', sans-serif",
     roboto: "'Roboto', sans-serif",
   },
   fontSize: {
-    "baloo-XL": "3rem", //48px
-    "baloo-L": "2rem", //32px
-    "baloo-M": "1.5rem", //24px
-    "baloo-S": "1.25rem", //20px
-    "baloo-XS": "1.125rem", //18px
-    "roboto-L": "1.25rem", //20px
-    "roboto-M": "1rem", //16px
-    "roboto-S": "0.875rem", //14px
-    "roboto-XS": "0.75rem", //12px
+    XL: "3rem", //48px
+    LL: "2rem", //32px
+    MM: "1.5rem", //24px
+    SS: "1.25rem", //20px
+    XSS: "1.125rem", //18px
+    L: "1.25rem", //20px
+    M: "1rem", //16px
+    Ss: "0.875rem", //14px
+    XS: "0.75rem", //12px
     tag: "0.625rem",
     "button-G": "0.875rem",
     "button-M": "0.75rem",
