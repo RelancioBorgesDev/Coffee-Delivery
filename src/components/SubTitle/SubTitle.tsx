@@ -1,7 +1,14 @@
-import React from 'react'
+import { SubTitleContainer } from "./SubTitle.styles";
 
-export default function SubTitle() {
+interface SubTitleProps {
+  size: "XS" | "L" | "SS" | "Ss" | "M";
+  color: "base-title" | "yellow-dark" | "base-subtitle";
+  text: string;
+}
+export default function SubTitle({ color, size, text }: SubTitleProps) {
   return (
-    <div>SubTitle</div>
-  )
+    <SubTitleContainer color={color} size={size}>
+      {text}
+    </SubTitleContainer>
+  );
 }

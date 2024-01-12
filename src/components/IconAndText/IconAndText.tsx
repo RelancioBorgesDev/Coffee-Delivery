@@ -2,7 +2,7 @@ import { ElementType } from "react";
 import { Container } from "./IconAndText.style";
 import Icon from "../Icon/Icon";
 
-interface IconAndTextProps {
+export interface IconAndTextProps {
   isRounded: boolean;
   "icon-color": "white" | "yellow-dark" | "purple";
   "text-color": "base-text" | "purple";
