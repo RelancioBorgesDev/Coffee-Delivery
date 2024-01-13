@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const CoffeeActionsControl = styled.div`
-  width: 72px;
+  width: fit-content;
   height: 38px;
   background-color: ${({ theme }) => theme.colors["base-button"]};
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  gap: 0.25rem;
+  gap: 0.5rem;
   border-radius: 0.375rem;
 
   button {

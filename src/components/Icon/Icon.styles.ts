@@ -27,4 +27,5 @@ export const IconContainer = styled.button<IconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+
 `;

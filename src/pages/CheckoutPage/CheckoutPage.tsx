@@ -95,7 +95,12 @@ export default function CheckoutPage() {
               <h4>R$ 33,20</h4>
             </div>
           </CartTotalContainer>
-          <Button bg-color="yellow" text="Confirmar Pedido"/>
+
+          <Button
+            bg-color="yellow"
+            text="Confirmar Pedido"
+            className="btn-checkout"
+          />
         </SelectedCoffesContainer>
       </Areas>
     </CheckoutPageContainer>

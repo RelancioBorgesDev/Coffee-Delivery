@@ -1,3 +1,4 @@
+import { Minus, Plus } from "phosphor-react";
 import { CoffeeActionsControl } from "./ActionsControl.style";
 
 export default function ActionsControl({
@@ -7,9 +8,13 @@ export default function ActionsControl({
 }) {
   return (
     <CoffeeActionsControl>
-      <button>-</button>
+      <button>
+        <Minus size={14} />
+      </button>
       <span>{coffee_quantity}</span>
-      <button>+</button>
+      <button>
+        <Plus size={14} />
+      </button>
     </CoffeeActionsControl>
   );
 }

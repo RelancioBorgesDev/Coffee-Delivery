@@ -33,6 +33,10 @@ export const SelectedCoffesContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
+  .btn-checkout{
+    cursor: pointer;
+  }
 `;
 
 export const Description = styled.span`

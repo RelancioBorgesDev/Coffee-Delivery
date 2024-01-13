@@ -1,6 +1,7 @@
+import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   "bg-color": "yellow" | "yellow-dark";
 }
 
