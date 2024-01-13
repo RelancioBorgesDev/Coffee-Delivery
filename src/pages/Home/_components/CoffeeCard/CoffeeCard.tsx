@@ -1,7 +1,6 @@
 import {
   CoffeeAction,
   CoffeeActions,
-  CoffeeActionsControl,
   CoffeeCardContainer,
   CoffeeDescription,
   CoffeeTag,
@@ -28,7 +27,7 @@ export default function CoffeeCard({
       <img src={coffee_image} alt="coffee" />
       <CoffeeTags>
         {tags.map((tag) => (
-          <CoffeeTag>{tag}</CoffeeTag>
+          <CoffeeTag key={id + tag}>{tag}</CoffeeTag>
         ))}
       </CoffeeTags>
       <CoffeeDescription>

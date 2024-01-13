@@ -58,7 +58,6 @@ export default function Home() {
 
   return (
     <Container>
-      <Header />
       <ContentContainer>
         <LeftContent>
           <TextContainer>
@@ -85,6 +84,7 @@ export default function Home() {
                 text,
               }) => (
                 <IconAndText
+                  key={text}
                   bg-color={bgColor}
                   bg-color-icon={bgColorIcon}
                   icon-color={iconColor}
