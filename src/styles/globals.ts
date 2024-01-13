@@ -12,4 +12,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors["base-text"]};
     
   }
+
+  ul{
+    list-style: none;
+  }
 `;

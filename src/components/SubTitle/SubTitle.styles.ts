@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface SubTitleProps {
   size: "XS" | "L" | "SS" | "Ss" | "M";
-  color: "base-title" | "yellow-dark" | "base-subtitle";
+  color: "base-title" | "yellow-dark" | "base-subtitle" | "base-label";
 }
 
 export const SubTitleContainer = styled.h1<SubTitleProps>`

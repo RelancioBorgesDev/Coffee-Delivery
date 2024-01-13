@@ -2,7 +2,7 @@ import { SubTitleContainer } from "./SubTitle.styles";
 
 interface SubTitleProps {
   size: "XS" | "L" | "SS" | "Ss" | "M";
-  color: "base-title" | "yellow-dark" | "base-subtitle";
+  color: "base-title" | "yellow-dark" | "base-subtitle" | "base-label";
   text: string;
 }
 export default function SubTitle({ color, size, text }: SubTitleProps) {

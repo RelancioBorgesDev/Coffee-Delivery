@@ -27,3 +27,16 @@ export const IconTextContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
 `;
+
+export const CoffeesContainer = styled.section`
+  padding: 0 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.375rem;
+`;
+
+export const CoffeesList = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+`;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface TitleProps {
-  size: "XL" | "XS" | "L" | "SS";
+  size: "XL" | "XS" | "L" | "SS" | "LL" | "M";
   color: "base-title" | "yellow-dark";
 }
 

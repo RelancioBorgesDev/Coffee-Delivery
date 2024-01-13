@@ -1,7 +1,7 @@
 import { TitleContainer } from "./Title.style";
 
 interface TitleProps {
-  size: "XL" | "XS" | "L" | "SS";
+  size: "XL" | "XS" | "L" | "SS" | "LL" | "M";
   text: string;
   color: "base-title" | "yellow-dark";
 }

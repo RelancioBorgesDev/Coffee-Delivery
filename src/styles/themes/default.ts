@@ -32,7 +32,7 @@ export const defaultTheme = {
     M: "1rem", //16px
     Ss: "0.875rem", //14px
     XS: "0.75rem", //12px
-    tag: "0.625rem",
+    tag: "0.625rem",//10px
     "button-G": "0.875rem",
     "button-M": "0.75rem",
   },

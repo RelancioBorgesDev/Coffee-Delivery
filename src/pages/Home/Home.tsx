@@ -1,16 +1,20 @@
-import Header from "../components/Header/Header";
-import Title from "../components/Title/Title";
-import banner from "../assets/CoffeeBanner.png";
-import SubTitle from "../components/SubTitle/SubTitle";
-import IconAndText from "../components/IconAndText/IconAndText";
+import Header from "../../components/Header/Header";
+import Title from "../../components/Title/Title";
+import banner from "../../assets/CoffeeBanner.png";
+import SubTitle from "../../components/SubTitle/SubTitle";
+import IconAndText from "../../components/IconAndText/IconAndText";
 import { Clock, Coffee, Package, ShoppingCart } from "phosphor-react";
 import {
+  CoffeesContainer,
+  CoffeesList,
   Container,
   ContentContainer,
   IconTextContainer,
   LeftContent,
   TextContainer,
 } from "./Home.styles";
+import CoffeeCard from "./_components/CoffeeCard/CoffeeCard";
+import coffees_data from "../../data/coffees-data.json";
 
 export default function Home() {
   const contentIconText = [
@@ -95,6 +99,34 @@ export default function Home() {
         </LeftContent>
         <img src={banner} alt="banner" />
       </ContentContainer>
+
+      <CoffeesContainer>
+        <Title color="base-title" size="LL" text="Nossos cafés" />
+        <CoffeesList>
+          {coffees_data.map(
+            ({
+              id,
+              coffe_title,
+              coffee_image,
+              coffee_quantity,
+              coffee_subtitle,
+              price,
+              tags,
+            }) => (
+              <CoffeeCard
+                key={id}
+                id={id}
+                coffe_title={coffe_title}
+                coffee_image={coffee_image}
+                coffee_quantity={coffee_quantity}
+                tags={tags}
+                price={price}
+                coffee_subtitle={coffee_subtitle}
+              />
+            )
+          )}
+        </CoffeesList>
+      </CoffeesContainer>
     </Container>
   );
 }
