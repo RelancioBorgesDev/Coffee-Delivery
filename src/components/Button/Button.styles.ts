@@ -5,7 +5,7 @@ interface ButtonProps {
 }
 
 export const ButtonContainer = styled.button<ButtonProps>`
-  width: 8.25rem;
+  width: 100%;
   background-color: ${({ theme, "bg-color": bgColor }) =>
     theme.colors[bgColor]};
   color: ${(props) => props.theme.colors.white};
@@ -13,4 +13,6 @@ export const ButtonContainer = styled.button<ButtonProps>`
   font-weight: bold;
   padding: 0.75rem 0.5rem;
   border: 0;
+  text-transform: uppercase;
+  font-size: ${({ theme }) => theme.fontSize["button-G"]};
 `;
