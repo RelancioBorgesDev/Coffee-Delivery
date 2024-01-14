@@ -13,10 +13,13 @@ import Icon from "../../components/Icon/Icon";
 import { CurrencyDollar, MapPinLine } from "phosphor-react";
 import SubTitle from "../../components/SubTitle/SubTitle";
 import { PaymentMethodOptions } from "./_components/PaymentMethodOptions/PaymentMethodOptions";
-import CoffeSelected from "./_components/CoffeeSelected/CoffeSelected";
+import CoffeeSelected from "./_components/CoffeeSelected/CoffeSelected";
 import Button from "../../components/Button/Button";
+import { useCart } from "../../hooks/useCart";
 
 export default function CheckoutPage() {
+  const { cartItems, cartItemsTotal } = useCart();
+  const total = cartItemsTotal + 3.5;
   return (
     <CheckoutPageContainer>
       <Areas>
@@ -78,13 +81,14 @@ export default function CheckoutPage() {
       <Areas>
         <Title color="base-title" size="SS" text="Cafés selecionados" />
         <SelectedCoffesContainer>
-          <CoffeSelected />
-          <CoffeSelected />
+          {cartItems.map((coffee) => (
+            <CoffeeSelected coffee={coffee} />
+          ))}
           <Separator />
           <CartTotalContainer>
             <div>
               <h4>Total de Itens</h4>
-              <h4>R$ 29,70</h4>
+              <h4>R$ {cartItemsTotal.toFixed(2)}</h4>
             </div>
             <div>
               <h4>Entrega</h4>
@@ -92,7 +96,7 @@ export default function CheckoutPage() {
             </div>
             <div>
               <h1>Total</h1>
-              <h4>R$ 33,20</h4>
+              <h4>R$ {total.toFixed(2)}</h4>
             </div>
           </CartTotalContainer>
 

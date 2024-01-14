@@ -13,18 +13,32 @@ import Icon from "../../../../components/Icon/Icon";
 import { ShoppingCart } from "phosphor-react";
 import { Coffee } from "../../../../interfaces/coffee";
 import ActionsControl from "../../../../components/ActionsControl/ActionsControl";
-import { useCoffeeQuantity } from "../../../../hooks/useCoffeeQuantity";
 import { useCart } from "../../../../hooks/useCart";
+import { useState } from "react";
 
 export default function CoffeeCard(coffee: Coffee) {
-  const { coffeeQnt, increaseCoffeQuantity, decreaseCoffeeQuantity } =
-    useCoffeeQuantity();
+  const [quantity, setQuantity] = useState(1);
+
+  function handleIncrease() {
+    setQuantity((state) => state + 1);
+  }
+
+  function handleDecrease() {
+    setQuantity((state) => {
+      if (state >= 2) {
+        return state - 1; 
+      } else {
+        return 1; 
+      }
+    });
+  }
+
   const { addCoffeeToCart } = useCart();
 
   function handleAddToCart() {
     const coffeeToAdd = {
       ...coffee,
-      quantity: coffeeQnt,
+      quantity,
     };
     addCoffeeToCart(coffeeToAdd);
   }
@@ -46,9 +60,9 @@ export default function CoffeeCard(coffee: Coffee) {
         </span>
         <CoffeeActions>
           <ActionsControl
-            coffee_quantity={coffeeQnt}
-            increaseCoffeQuantity={increaseCoffeQuantity}
-            decreaseCoffeeQuantity={decreaseCoffeeQuantity}
+            onIncrease={handleIncrease}
+            onDecrease={handleDecrease}
+            quantity={quantity}
           />
           <CartBtn onClick={handleAddToCart}>
             <Icon

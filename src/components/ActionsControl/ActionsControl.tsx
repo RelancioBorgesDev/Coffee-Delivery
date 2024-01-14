@@ -1,22 +1,24 @@
 import { Minus, Plus } from "phosphor-react";
 import { CoffeeActionsControl } from "./ActionsControl.style";
 
+interface ActionsControlProps {
+  quantity: number;
+  onIncrease: () => void;
+  onDecrease: () => void;
+}
+
 export default function ActionsControl({
-  coffee_quantity,
-  increaseCoffeQuantity,
-  decreaseCoffeeQuantity,
-}: {
-  coffee_quantity: number;
-  increaseCoffeQuantity: () => void;
-  decreaseCoffeeQuantity: (coffeeQuantity: number) => void;
-}) {
+  quantity,
+  onIncrease,
+  onDecrease,
+}: ActionsControlProps) {
   return (
     <CoffeeActionsControl>
-      <button onClick={() => decreaseCoffeeQuantity(coffee_quantity)}>
+      <button onClick={onDecrease}>
         <Minus size={14} />
       </button>
-      <span>{coffee_quantity}</span>
-      <button onClick={() => increaseCoffeQuantity()}>
+      <span>{quantity}</span>
+      <button onClick={onIncrease}>
         <Plus size={14} />
       </button>
     </CoffeeActionsControl>

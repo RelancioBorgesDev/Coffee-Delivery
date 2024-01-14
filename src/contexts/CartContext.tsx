@@ -11,6 +11,10 @@ interface CartContextType {
   cartQuantity: number;
   cartItemsTotal: number;
   addCoffeeToCart: (coffee: CartItem) => void;
+  changeCartItemQuantity: (
+    cartItemId: number,
+    type: "increase" | "decrease"
+  ) => void;
 
   removeCartItem: (cartItemId: number) => void;
   cleanCart: () => void;
@@ -54,7 +58,28 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
 
     setCartItems(newCart);
   }
+  function changeCartItemQuantity(
+    cartItemId: number,
+    type: "increase" | "decrease"
+  ) {
+    setCartItems((prevCartItems) => {
+      const newCart = produce(prevCartItems, (draft) => {
+        const coffeeExistsInCart = prevCartItems.findIndex(
+          (cartItem) => Number.parseInt(cartItem.id) === cartItemId
+        );
 
+        if (coffeeExistsInCart >= 0) {
+          const item = draft[coffeeExistsInCart];
+          draft[coffeeExistsInCart].quantity =
+            type === "increase"
+              ? item.quantity + 1
+              : Math.max(item.quantity - 1, 1);
+        }
+      });
+
+      return newCart;
+    });
+  }
   function removeCartItem(cartItemId: number) {
     const newCart = produce(cartItems, (draft) => {
       const coffeeExistsInCart = cartItems.findIndex(
@@ -85,6 +110,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
         cartQuantity,
         removeCartItem,
         cartItemsTotal,
+        changeCartItemQuantity,
         cleanCart,
       }}
     >

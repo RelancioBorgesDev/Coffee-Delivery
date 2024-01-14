@@ -1,18 +1,44 @@
 import { CoffeeSelectedContainer } from "./styles";
 import ActionsControl from "../../../../components/ActionsControl/ActionsControl";
 import { Trash } from "phosphor-react";
+import { useCart } from "../../../../hooks/useCart";
+import { CartItem } from "../../../../contexts/CartContext";
 
-export default function CoffeSelected() {
+interface CoffeeCartCardProps {
+  coffee: CartItem;
+}
+
+export default function CoffeeSelected({ coffee }: CoffeeCartCardProps) {
+  const { changeCartItemQuantity, removeCartItem } = useCart();
+
+  function handleIncrease() {
+    changeCartItemQuantity(Number.parseInt(coffee.id), "increase");
+  }
+
+  function handleDecrease() {
+    changeCartItemQuantity(Number.parseInt(coffee.id), "decrease");
+  }
+
+  function handleRemove() {
+    removeCartItem(Number.parseInt(coffee.id));
+  }
+
+  const coffeeTotal = Number.parseInt(coffee.price) * coffee.quantity;
+
   return (
     <CoffeeSelectedContainer>
-      <img src="/coffees/Type=Americano.png" />
+      <img src={coffee.coffee_image} />
       <header>
-        <h1>Expresso Tradicional</h1>
-        <h1>R$ 9,90</h1>
+        <h1>{coffee.coffe_title}</h1>
+        <h1>R$ {coffeeTotal}</h1>
       </header>
       <div>
-        <ActionsControl coffee_quantity={1} />
-        <button>
+        <ActionsControl
+          quantity={coffee.quantity}
+          onIncrease={handleIncrease}
+          onDecrease={handleDecrease}
+        />
+        <button onClick={handleRemove}>
           <Trash size={22} />
           <span>Remover</span>
         </button>

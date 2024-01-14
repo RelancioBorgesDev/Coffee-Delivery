@@ -14,11 +14,8 @@ import {
 } from "./Home.styles";
 import CoffeeCard from "./_components/CoffeeCard/CoffeeCard";
 import { data } from "../../data/coffees-data";
-import { useCart } from "../../hooks/useCart";
 
 export default function Home() {
-  const { cartItems } = useCart();
-  console.log(cartItems);
   const contentIconText = [
     {
       "bg-color": "none" as const,
