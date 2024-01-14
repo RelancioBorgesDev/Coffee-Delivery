@@ -1,4 +1,3 @@
-import Header from "../../components/Header/Header";
 import Title from "../../components/Title/Title";
 import banner from "../../assets/CoffeeBanner.png";
 import SubTitle from "../../components/SubTitle/SubTitle";
@@ -14,9 +13,12 @@ import {
   TextContainer,
 } from "./Home.styles";
 import CoffeeCard from "./_components/CoffeeCard/CoffeeCard";
-import coffees_data from "../../data/coffees-data.json";
+import { data } from "../../data/coffees-data";
+import { useCart } from "../../hooks/useCart";
 
 export default function Home() {
+  const { cartItems } = useCart();
+  console.log(cartItems);
   const contentIconText = [
     {
       "bg-color": "none" as const,
@@ -103,12 +105,12 @@ export default function Home() {
       <CoffeesContainer>
         <Title color="base-title" size="LL" text="Nossos cafés" />
         <CoffeesList>
-          {coffees_data.map(
+          {data.map(
             ({
               id,
               coffe_title,
               coffee_image,
-              coffee_quantity,
+
               coffee_subtitle,
               price,
               tags,
@@ -118,7 +120,6 @@ export default function Home() {
                 id={id}
                 coffe_title={coffe_title}
                 coffee_image={coffee_image}
-                coffee_quantity={coffee_quantity}
                 tags={tags}
                 price={price}
                 coffee_subtitle={coffee_subtitle}

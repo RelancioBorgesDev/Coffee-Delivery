@@ -7,8 +7,10 @@ import logo from "../../assets/Logo.png";
 import Icon from "../Icon/Icon";
 import { MapPin, ShoppingCartSimple } from "phosphor-react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 export default function Header() {
+  const { cartQuantity } = useCart();
   return (
     <HeaderContainer>
       <span>
@@ -31,7 +33,9 @@ export default function Header() {
               icon={ShoppingCartSimple}
             />
           </Link>
-          <CartCheckoutQuantity>1</CartCheckoutQuantity>
+          {cartQuantity > 0 && (
+            <CartCheckoutQuantity>{cartQuantity}</CartCheckoutQuantity>
+          )}
         </CartCheckoutContainer>
       </div>
     </HeaderContainer>

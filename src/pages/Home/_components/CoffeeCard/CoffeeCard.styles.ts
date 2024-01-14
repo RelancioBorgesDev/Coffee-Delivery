@@ -70,4 +70,8 @@ export const CoffeeActions = styled.div`
   align-items: center;
 `;
 
-
+export const CartBtn = styled.span`
+ button{
+  cursor: pointer;
+ }
+`;
