@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface IconProps {
   "icon-color": "white" | "yellow-dark" | "purple" | "none";
-  "bg-color":
+  bgColor:
     | "purple"
     | "purple-dark"
     | "yellow-dark"
@@ -16,10 +16,9 @@ interface IconProps {
 export const IconContainer = styled.button<IconProps>`
   width: 2.375rem;
   height: 2.375rem;
-  background: ${({ theme, "bg-color": bgColor }) =>
+  background: ${({ theme, bgColor: bgColor }) =>
     bgColor == "none" ? "none" : theme.colors[bgColor]};
-  background-color: ${({ theme, "bg-color": bgColor }) =>
-    theme.colors[bgColor]};
+  background-color: ${({ theme, bgColor: bgColor }) => theme.colors[bgColor]};
   color: ${({ theme, "icon-color": iconColor }) => theme.colors[iconColor]};
   border: 0;
   border-radius: ${({ isRounded }) => (isRounded ? "50%" : "0.375rem")};
@@ -27,5 +26,4 @@ export const IconContainer = styled.button<IconProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-
 `;

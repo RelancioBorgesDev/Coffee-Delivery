@@ -6,7 +6,7 @@ export interface IconAndTextProps {
   isRounded: boolean;
   "icon-color": "white" | "yellow-dark" | "purple";
   "text-color": "base-text" | "purple";
-  "bg-color":
+  bgColor:
     | "purple"
     | "purple-dark"
     | "yellow-dark"
@@ -15,7 +15,7 @@ export interface IconAndTextProps {
     | "yellow-light"
     | "purple-light"
     | "none";
-  "bg-color-icon":
+  "bgColor-icon":
     | "purple"
     | "purple-dark"
     | "yellow-dark"
@@ -31,18 +31,18 @@ export default function IconAndText({
   isRounded,
   icon,
   "icon-color": iconColor,
-  "bg-color": bgColor,
-  "bg-color-icon": bgColorIcon,
+  bgColor: bgColor,
+  "bgColor-icon": bgColorIcon,
   "text-color": textColor,
   text,
 }: IconAndTextProps) {
   return (
-    <Container bg-color={bgColor} text-color={textColor}>
+    <Container bgColor={bgColor} text-color={textColor}>
       <Icon
         icon-color={iconColor}
         icon={icon}
         isRounded={isRounded}
-        bg-color={bgColorIcon}
+        bgColor={bgColorIcon}
       />
       <p>{text}</p>
     </Container>

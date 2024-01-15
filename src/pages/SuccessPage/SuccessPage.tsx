@@ -23,7 +23,7 @@ export default function SuccessPage() {
         <ContainerDetails>
           <Details>
             <Icon
-              bg-color="purple"
+              bgColor="purple"
               icon={MapPin}
               icon-color="white"
               isRounded={true}
@@ -38,7 +38,7 @@ export default function SuccessPage() {
           </Details>
           <Details>
             <Icon
-              bg-color="yellow"
+              bgColor="yellow"
               icon={Clock}
               icon-color="white"
               isRounded={true}
@@ -50,7 +50,7 @@ export default function SuccessPage() {
           </Details>
           <Details>
             <Icon
-              bg-color="yellow-dark"
+              bgColor="yellow-dark"
               icon={CurrencyDollar}
               icon-color="white"
               isRounded={true}

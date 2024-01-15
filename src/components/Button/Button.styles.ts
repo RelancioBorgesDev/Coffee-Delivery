@@ -1,19 +1,24 @@
-import { ButtonHTMLAttributes } from "react";
 import styled from "styled-components";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  "bg-color": "yellow" | "yellow-dark";
-}
-
-export const ButtonContainer = styled.button<ButtonProps>`
-  width: 100%;
-  background-color: ${({ theme, "bg-color": bgColor }) =>
-    theme.colors[bgColor]};
-  color: ${(props) => props.theme.colors.white};
-  border-radius: 0.375rem;
-  font-weight: bold;
-  padding: 0.75rem 0.5rem;
-  border: 0;
-  text-transform: uppercase;
+export const ButtonContainer = styled.button`
+  padding: 0.75rem 2.8rem;
+  color: ${({ theme }) => theme.colors["white"]};
+  font-weight: 700;
+  background: ${({ theme }) => theme.colors["yellow"]};
   font-size: ${({ theme }) => theme.fontSize["button-G"]};
+  border: none;
+  border-radius: 6px;
+  margin-top: 0.7rem;
+  text-transform: uppercase;
+  transition: 0.4s;
+  line-height: 1.3rem;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):hover {
+    background: ${({ theme }) => theme.colors["yellow-dark"]};
+  }
 `;

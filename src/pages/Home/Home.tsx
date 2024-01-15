@@ -18,8 +18,8 @@ import { data } from "../../data/coffees-data";
 export default function Home() {
   const contentIconText = [
     {
-      "bg-color": "none" as const,
-      "bg-color-icon": "yellow-dark" as const,
+      bgColor: "none" as const,
+      "bgColor-icon": "yellow-dark" as const,
       "icon-color": "white" as const,
       icon: ShoppingCart,
       isRounded: true,
@@ -27,8 +27,8 @@ export default function Home() {
       "text-color": "base-text" as const,
     },
     {
-      "bg-color": "none" as const,
-      "bg-color-icon": "base-text" as const,
+      bgColor: "none" as const,
+      "bgColor-icon": "base-text" as const,
       "icon-color": "white" as const,
       icon: Package,
       isRounded: true,
@@ -36,8 +36,8 @@ export default function Home() {
       "text-color": "base-text" as const,
     },
     {
-      "bg-color": "none" as const,
-      "bg-color-icon": "yellow" as const,
+      bgColor: "none" as const,
+      "bgColor-icon": "yellow" as const,
       "icon-color": "white" as const,
       icon: Clock,
       isRounded: true,
@@ -45,8 +45,8 @@ export default function Home() {
       "text-color": "base-text" as const,
     },
     {
-      "bg-color": "none" as const,
-      "bg-color-icon": "purple-dark" as const,
+      bgColor: "none" as const,
+      "bgColor-icon": "purple-dark" as const,
       "icon-color": "white" as const,
       icon: Coffee,
       isRounded: true,
@@ -74,8 +74,8 @@ export default function Home() {
           <IconTextContainer>
             {contentIconText.map(
               ({
-                "bg-color": bgColor,
-                "bg-color-icon": bgColorIcon,
+                bgColor: bgColor,
+                "bgColor-icon": bgColorIcon,
                 "icon-color": iconColor,
                 "text-color": textColor,
                 icon,
@@ -84,8 +84,8 @@ export default function Home() {
               }) => (
                 <IconAndText
                   key={text}
-                  bg-color={bgColor}
-                  bg-color-icon={bgColorIcon}
+                  bgColor={bgColor}
+                  bgColor-icon={bgColorIcon}
                   icon-color={iconColor}
                   icon={icon}
                   isRounded={isRounded}

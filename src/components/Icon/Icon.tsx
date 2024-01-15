@@ -3,7 +3,7 @@ import { IconContainer } from "./Icon.styles.ts";
 
 interface IconProps {
   "icon-color": "white" | "yellow-dark" | "purple";
-  "bg-color":
+  bgColor:
     | "purple"
     | "purple-dark"
     | "yellow-dark"
@@ -15,14 +15,14 @@ interface IconProps {
   icon: ElementType;
 }
 export default function Icon({
-  "bg-color": bgColor,
+  bgColor: bgColor,
   "icon-color": iconColor,
   isRounded,
   icon: Icon,
 }: IconProps) {
   return (
     <IconContainer
-      bg-color={bgColor}
+      bgColor={bgColor}
       icon-color={iconColor}
       isRounded={isRounded}
     >

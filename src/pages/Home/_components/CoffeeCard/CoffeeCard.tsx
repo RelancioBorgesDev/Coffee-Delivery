@@ -26,9 +26,9 @@ export default function CoffeeCard(coffee: Coffee) {
   function handleDecrease() {
     setQuantity((state) => {
       if (state >= 2) {
-        return state - 1; 
+        return state - 1;
       } else {
-        return 1; 
+        return 1;
       }
     });
   }
@@ -66,7 +66,7 @@ export default function CoffeeCard(coffee: Coffee) {
           />
           <CartBtn onClick={handleAddToCart}>
             <Icon
-              bg-color="purple-dark"
+              bgColor="purple-dark"
               icon={ShoppingCart}
               icon-color="white"
               isRounded={false}

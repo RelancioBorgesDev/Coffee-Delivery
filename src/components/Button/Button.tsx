@@ -1,19 +1,10 @@
 import { ButtonHTMLAttributes } from "react";
-import { ButtonContainer } from "./Button.styles.ts";
+import { ButtonContainer } from "./Button.styles";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  "bg-color": "yellow" | "yellow-dark";
-  text: string;
+  text: string | number;
 }
 
-export default function Button({
-  text,
-  "bg-color": bgColor,
-  ...rest
-}: ButtonProps) {
-  return (
-    <ButtonContainer bg-color={bgColor} {...rest}>
-      {text}
-    </ButtonContainer>
-  );
+export function Button({ text, ...rest }: ButtonProps) {
+  return <ButtonContainer {...rest}>{text}</ButtonContainer>;
 }

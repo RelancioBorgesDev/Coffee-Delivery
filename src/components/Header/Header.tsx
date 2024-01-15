@@ -27,7 +27,7 @@ export default function Header() {
         <CartCheckoutContainer>
           <Link to={"/checkout"}>
             <Icon
-              bg-color="yellow-light"
+              bgColor="yellow-light"
               icon-color="yellow-dark"
               isRounded={false}
               icon={ShoppingCartSimple}

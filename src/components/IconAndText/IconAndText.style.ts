@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface ContainerProps {
   "text-color": "base-text" | "purple";
-  "bg-color":
+  bgColor:
     | "purple"
     | "purple-dark"
     | "yellow-dark"
@@ -23,8 +23,7 @@ export const Container = styled.span<ContainerProps>`
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background-color: ${({ theme, "bg-color": bgColor }) =>
-    theme.colors[bgColor]};
+  background-color: ${({ theme, bgColor: bgColor }) => theme.colors[bgColor]};
 
   p {
     color: ${({ theme, "text-color": textColor }) => theme.colors[textColor]};

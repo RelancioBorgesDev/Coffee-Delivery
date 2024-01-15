@@ -1,8 +1,8 @@
 import { CoffeeSelectedContainer } from "./styles";
-import ActionsControl from "../../../../components/ActionsControl/ActionsControl";
+import ActionsControl from "../../../../../components/ActionsControl/ActionsControl";
 import { Trash } from "phosphor-react";
-import { useCart } from "../../../../hooks/useCart";
-import { CartItem } from "../../../../contexts/CartContext";
+import { useCart } from "../../../../../hooks/useCart";
+import { CartItem } from "../../../../../contexts/CartContext";
 
 interface CoffeeCartCardProps {
   coffee: CartItem;
@@ -30,7 +30,7 @@ export default function CoffeeSelected({ coffee }: CoffeeCartCardProps) {
       <img src={coffee.coffee_image} />
       <header>
         <h1>{coffee.coffe_title}</h1>
-        <h1>R$ {coffeeTotal}</h1>
+        <h1>R$ {coffeeTotal.toFixed(2)}</h1>
       </header>
       <div>
         <ActionsControl
