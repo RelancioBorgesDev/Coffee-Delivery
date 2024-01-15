@@ -48,6 +48,7 @@ export default function CheckoutPage() {
   const { cleanCart } = useCart();
 
   async function handleConfirmOrder(data: ConfirmOrderFormData) {
+    console.log(data);
     navigate("/success", {
       state: data,
     });

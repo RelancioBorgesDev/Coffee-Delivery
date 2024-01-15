@@ -9,8 +9,28 @@ import {
   Details,
   SuccessPageContainer,
 } from "./SuccessPage.style";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { paymentMethods } from "../CheckoutPage/_components/FormPayment/PaymentMethodOptions/PaymentMethodOptions";
+import { OrderData } from "../CheckoutPage/CheckoutPage";
+
+interface LocationType {
+  state: OrderData;
+}
 
 export default function SuccessPage() {
+  const { state } = useLocation() as unknown as LocationType;
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!state) {
+      navigate("/");
+    }
+  }, []);
+
+  if (!state) return <></>;
+
   return (
     <SuccessPageContainer>
       <section>
@@ -30,8 +50,10 @@ export default function SuccessPage() {
             />
             <Description>
               <p>
-                Entrega em{" "}
-                <span className="data"> Rua João Daniel Martinelli, 102</span>
+                Entrega em Entrega em <strong>{state.street}</strong>,{" "}
+                {state.number}
+                <br />
+                {state.district} - {state.city}, {state.uf}
               </p>
               <p>Farrapos - Porto Alegre, RS</p>
             </Description>
@@ -57,7 +79,7 @@ export default function SuccessPage() {
             />
             <Description>
               <p>Pagamento na entrega</p>
-              <p className="data">Cartão de Crédito</p>
+              <strong>{paymentMethods[state.paymentMethod].label}</strong>
             </Description>
           </Details>
         </ContainerDetails>
